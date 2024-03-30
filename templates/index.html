@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <h1 class="display-1">Quiz</h1>
+
+<div class="section">
+
+
+    <div id="container">
+
+        <div class="progress-container"><p style="text-align:center; color:#0c6dfd">Progress</p>
+            <div class="progress">
+              <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+        <div class="box visible" id="div0"> <h5 class="display-5">Rules</h5>
+            <div>
+                <p class="rules">* There is only 1 correct answer</p>
+                <p class="rules">* You will see your answers and if they were correct at the end of quiz</p>
+                <p class="rules">* You will see a chart with all questions and how many users voted for what at the end</p>
+            </div>
+            <button onclick="start()" type="button" class="btn btn-outline-primary button" >Start</button>
+        </div>
+
+        <div class="box" id="div1"> <h5 class="display-5">Which planet is known as the "Red Planet"?</h5>
+            <form action="/submit" method="post" id="quizForm">
+                <div id="form">
+                <input type="radio" id="option1" name="option_div1" value="Jupiter" >
+                <span onclick="document.getElementById('option1').checked = true;">Jupiter</span><br>
+                <input type="radio" id="option2" name="option_div1" value="Mars">
+                <span onclick="document.getElementById('option2').checked = true;">Mars</span><br>
+                <input type="radio" id="option3" name="option_div1" value="Venus">
+                <span onclick="document.getElementById('option3').checked = true;">Venus</span><br>
+                <input type="radio" id="option4" name="option_div1" value="Saturn">
+                <span onclick="document.getElementById('option4').checked = true;">Saturn</span><br>
+                <button onclick="nextDiv()" type="button" class="btn btn-outline-primary button" >Next question</button>
+
+                </div>
+
+
+        </div>
+        <div class="box" id="div2"><h5 class="display-5">Who painted the Mona Lisa?</h5>
+
+
+                <div id="form">
+                <input type="radio" id="option5" name="option_div2" value="Vincent van Gogh" >
+                <span onclick="document.getElementById('option5').checked = true;">Vincent van Gogh</span><br>
+                <input type="radio" id="option6" name="option_div2" value="Leonardo da Vinci">
+                <span onclick="document.getElementById('option6').checked = true;">Leonardo da Vinci</span><br>
+                <input type="radio" id="option7" name="option_div2" value="Pablo Picasso">
+                <span onclick="document.getElementById('option7').checked = true;">Pablo Picasso</span><br>
+                <input type="radio" id="option8" name="option_div2" value="Michelangelo">
+                <span onclick="document.getElementById('option8').checked = true;">Michelangelo</span><br>
+                <div>
+                <button onclick="previousDiv()" type="button" class="btn btn-outline-primary button" >Previous question</button>
+                <button onclick="nextDiv()" type="button" class="btn btn-outline-primary button" >Next question</button>
+                </div>
+                </div>
+
+            </div>
+
+        <div class="box" id="div3"><h5 class="display-5">Who wrote the play "Romeo and Juliet"? </h5>
+
+                <div id="form">
+                <input type="radio" id="option9" name="option_div3" value="William Shakespeare" >
+                <span onclick="document.getElementById('option9').checked = true;">William Shakespeare</span><br>
+                <input type="radio" id="option10" name="option_div3" value="Charles Dickens">
+                <span onclick="document.getElementById('option10').checked = true;">Charles Dickens</span><br>
+                <input type="radio" id="option11" name="option_div3" value="Jane Austen">
+                <span onclick="document.getElementById('option11').checked = true;">Jane Austen</span><br>
+                <input type="radio" id="option12" name="option_div3" value="Mark Twain">
+                <span onclick="document.getElementById('option12').checked = true;">Mark Twain</span><br>
+                <div>
+                    <button onclick="previousDiv()" type="button" class="btn btn-outline-primary button" >Previous question</button>
+                    <button onclick="nextDiv()" type="button" class="btn btn-outline-primary button" >Next question</button>
+                 </div>
+                 </div>
+            </div>
+        <div class="box" id="div4"><h5 class="display-5">What is the capital city of Australia?</h5>
+
+                <div id="form">
+                <input type="radio" id="option13" name="option_div4" value="Melbourne" >
+                <span onclick="document.getElementById('option13').checked = true;">Melbourne</span><br>
+                <input type="radio" id="option14" name="option_div4" value="Sydney">
+                <span onclick="document.getElementById('option14').checked = true;">Sydney</span><br>
+                <input type="radio" id="option15" name="option_div4" value="Canberra">
+                <span onclick="document.getElementById('option15').checked = true;">Canberra</span><br>
+                <input type="radio" id="option16" name="option_div4" value="Bisbane">
+                <span onclick="document.getElementById('option16').checked = true;">Bisbane</span><br>
+                <div>
+                    <button onclick="previousDiv()" type="button" class="btn btn-outline-primary button" >Previous question</button>
+                    <button onclick="nextDiv()" type="button" class="btn btn-outline-primary button" >Next question</button>
+                    </div>
+            </div>
+            </div>
+        <div class="box" id="div5"><h5 class="display-5">Who developed the theory of relativity?</h5>
+
+                <div id="form">
+                <input type="radio" id="option17" name="option_div5" value="Albert Einstein" >
+                <span onclick="document.getElementById('option17').checked = true;">Albert Einstein</span><br>
+                <input type="radio" id="option18" name="option_div5" value="Isaac Newton">
+                <span onclick="document.getElementById('option18').checked = true;">Isaac Newton</span><br>
+                <input type="radio" id="option19" name="option_div5" value="Galileo Galilei">
+                <span onclick="document.getElementById('option19').checked = true;">Galileo Galilei</span><br>
+                <input type="radio" id="option20" name="option_div5" value="Nikola Tesla">
+                <span onclick="document.getElementById('option20').checked = true;">Nikola Tesla</span><br>
+                <div>
+                    <button onclick="previousDiv()" type="button" class="btn btn-outline-primary button" >Previous question</button>
+                    <button onclick="nextDiv()" type="button" class="btn btn-outline-primary button" >Next question</button>
+                    </div>
+                </div>
+            </div>
+        <div class="box" id="div6"><h5 class="display-5">Which is the longest river in the world?</h5>
+
+                <div id="form">
+                <input type="radio" id="option21" name="option_div6" value="Nile" >
+                <span onclick="document.getElementById('option21').checked = true;">Nile</span><br>
+                <input type="radio" id="option22" name="option_div6" value="Amazon">
+                <span onclick="document.getElementById('option22').checked = true;">Amazon</span><br>
+                <input type="radio" id="option23" name="option_div6" value="Yangtze">
+                <span onclick="document.getElementById('option23').checked = true;">Yangtze</span><br>
+                <input type="radio" id="option24" name="option_div6" value="Mississippi">
+                <span onclick="document.getElementById('option24').checked = true;">Mississippi</span><br>
+                <div>
+                    <button onclick="previousDiv()" type="button" class="btn btn-outline-primary button" >Previous question</button>
+                    <button  type="submit" class="btn btn-outline-primary button" >Submit</button>
+                    </div>
+                </div>
+            </form></div>
+
+
+      </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+let currentDiv = 0;
+
+function nextDiv() {
+
+//var radioButtons = document.getElementsByName('option');
+const currentDivElem = document.getElementById('div' + currentDiv);
+const nextDivElem = document.getElementById('div' + (currentDiv + 1));
+const radioButtons = currentDivElem.querySelectorAll('input[type="radio"]');
+
+let isSelected = false;
+
+for (let i = 0; i < radioButtons.length; i++) {
+if (radioButtons[i].checked) {
+    isSelected = true;
+    break;
+}
+}
+
+
+
+if (isSelected) {
+            currentDivElem.classList.remove('visible');
+            if (nextDivElem) {
+                nextDivElem.classList.add('visible');
+                currentDiv++;
+                updateProgressBar();
+            }
+} else {
+    alert('Please select an option before proceeding.');
+}
+
+}
+
+function previousDiv(){
+    const currentDivElem = document.getElementById('div' + currentDiv);
+        const previousDivElem = document.getElementById('div' + (currentDiv - 1));
+
+        currentDivElem.classList.remove('visible');
+        previousDivElem.classList.add('visible');
+        currentDiv--;
+        updateProgressBar();
+}
+
+function start(){
+    const currentDivElem = document.getElementById('div' + currentDiv);
+        const nextDivElem = document.getElementById('div' + (currentDiv + 1));
+
+        currentDivElem.classList.remove('visible');
+        nextDivElem.classList.add('visible');
+        currentDiv++;
+        updateProgressBar();
+}
+
+
+function updateProgressBar() {
+        const progress = (currentDiv - 1) * 20;
+        document.getElementById('progress-bar').style.width = progress + '%';
+        document.getElementById('progress-bar').setAttribute('aria-valuenow', progress);
+    }
+  </script>
+
+
+
+{% endblock %}

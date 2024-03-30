@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+<h1>Results</h1>
+<div class="section">
+
+<ul>
+    <li class="list1"> Question 1 : {{ results.q1 }} <div id="image-container">
+        <img id="correct-image1" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image1" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div> <p class="pp"> Correct answer is: "Mars"</p></li>
+    <li class="list1"> Question 2 : {{ results.q2 }} <div id="image-container">
+        <img id="correct-image2" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image2" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div> <p class="pp"> Correct answer is: "Leonardo da Vinci"</p></li>
+    <li class="list1"> Question 3 : {{ results.q3 }} <div id="image-container">
+        <img id="correct-image3" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image3" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div> <p class="pp"> Correct answer is: "William Shakespeare"</p></li>
+    <li class="list1"> Question 4 : {{ results.q4 }} <div id="image-container">
+        <img id="correct-image4" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image4" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div> <p class="pp"> Correct answer is: "Sydney"</p></li>
+    <li class="list1"> Question 5 : {{ results.q5 }} <div id="image-container">
+        <img id="correct-image5" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image5" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div> <p class="pp"> Correct answer is: "Albert Einstein"</p></li>
+    <li class="list1"> Question 6 : {{ results.q6 }} <div id="image-container">
+        <img id="correct-image6" src="https://cdn-icons-png.flaticon.com/256/4436/4436481.png" alt="Correct Image">
+        <img id="wrong-image6" src="https://cdn-icons-png.freepik.com/256/14025/14025835.png" alt="Wrong Image">
+      </div><p class="pp"> Correct answer is: "Nile"</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+<script>
+    function compare1(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image1").style.display = "inline-block";
+            document.getElementById("wrong-image1").style.display = "none";
+        } else {
+            document.getElementById("correct-image1").style.display = "none";
+            document.getElementById("wrong-image1").style.display = "inline-block";
+        }
+    }
+
+    function compare2(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image2").style.display = "inline-block";
+            document.getElementById("wrong-image2").style.display = "none";
+        } else {
+            document.getElementById("correct-image2").style.display = "none";
+            document.getElementById("wrong-image2").style.display = "inline-block";
+        }
+    }
+
+    function compare3(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image3").style.display = "inline-block";
+            document.getElementById("wrong-image3").style.display = "none";
+        } else {
+            document.getElementById("correct-image3").style.display = "none";
+            document.getElementById("wrong-image3").style.display = "inline-block";
+        }
+    }
+
+    function compare4(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image4").style.display = "inline-block";
+            document.getElementById("wrong-image4").style.display = "none";
+        } else {
+            document.getElementById("correct-image4").style.display = "none";
+            document.getElementById("wrong-image4").style.display = "inline-block";
+        }
+    }
+
+    function compare5(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image5").style.display = "inline-block";
+            document.getElementById("wrong-image5").style.display = "none";
+        } else {
+            document.getElementById("correct-image5").style.display = "none";
+            document.getElementById("wrong-image5").style.display = "inline-block";
+        }
+    }
+
+    function compare6(answer, correct){
+        if (answer === correct) {
+            document.getElementById("correct-image6").style.display = "inline-block";
+            document.getElementById("wrong-image6").style.display = "none";
+        } else {
+            document.getElementById("correct-image6").style.display = "none";
+            document.getElementById("wrong-image6").style.display = "inline-block";
+        }
+    }
+
+    window.onload = function() {
+    var q1 = "{{ results.q1 }}";
+    var q2 = "{{ results.q2 }}";
+    var q3 = "{{ results.q3 }}";
+    var q4 = "{{ results.q4 }}";
+    var q5 = "{{ results.q5 }}";
+    var q6 = "{{ results.q6 }}";
+  compare1(q1 , 'Mars');
+  compare2(q2, 'Leonardo da Vinci');
+  compare3(q3, 'William Shakespeare');
+  compare4(q4, 'Sydney');
+  compare5(q5, 'Albert Einstein');
+  compare6(q6, 'Nile');
+};
+
+</script>
+{% endblock %}
